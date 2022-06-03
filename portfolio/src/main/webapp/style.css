@@ -16,9 +16,12 @@
     position: relative;
 }
 
-img {
+.profilePic {
     border-radius: 50%;
     border: 8px solid #86888A;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .center {
