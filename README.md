@@ -2,6 +2,8 @@
 
 This repo contains Matt's portfolio and projects.
 
+Check it out here: https://mwong-sps-summer22.appspot.com/
+
 <!-- To get started:
 
 - Login to [Google Cloud Shell](https://ssh.cloud.google.com/cloudshell/editor)
