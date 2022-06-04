@@ -18,18 +18,24 @@
 
 .profilePic {
     border-radius: 50%;
-    border: 8px solid #86888A;
+    border: 8px solid #313335;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.socialMediaIcons {
+    width: 45px;
+    height: 45px;
+    margin: 0px 5px 0px 5px;
+}
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
+/*---Fonts---*/
 .fonts {
     font-family: "Gill Sans";
     font-weight: 150;
@@ -39,9 +45,23 @@
     font-family: "Gill Sans";
     font-weight: 150;
     font-size: 25px;
+    padding-bottom: 0px;
 }
 .headerFont {
     font-family: "Gill Sans";
     font-weight: 500;
     font-size: 30px;
+}
+
+.test {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+.experienceLogos {
+    border-radius: 15%;
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
 }
