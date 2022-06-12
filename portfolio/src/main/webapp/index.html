@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body class="cursor">
     <div id="content">
       <!--Introduction-->
       <h1 class="headerFont">Matthew Wong</h1>
@@ -31,10 +31,18 @@
 
 
     <div class="test">
-        <p class="headerFont">Experience 💼</p>
+        <p class="headerFont"><a href="/experience" style="text-decoration:none;">Experience 💼</a></p>
         <a href="https://www.thescore.com/"><img src="/images/theScore.png" class="experienceLogos"/></a>
         <a href="https://www.shopify.com/"><img src="/images/Shopify.jpeg" class="experienceLogos"/></a>
         <a href="https://www.foundersboost.com/"><img src="/images/FoundersBoost.jpeg" class="experienceLogos"/></a>
+    </div>
+</br>
+    <div class="test">
+        <p class="headerFont">Skills 🛠</p>
+        <p class="fonts">Languages/Frameworks: Swift, Java, C#, C++, JavaScript, HTML, CSS</p>
+        <span class="taga">Languages/Frameworks:</span>
+        <p class="fonts">Languages/Frameworks:</p>
+        <p class="fonts">Languages/Frameworks:</p>
     </div>
 </br>
     <div class="test">
@@ -45,8 +53,32 @@
         <p class="headerFont">Interests 🏀</p>
         <a href="#"><img src="/images/Raptors.png" class="experienceLogos"/></a>
         <a href="#"><img src="/images/Travelling.png" class="experienceLogos"/></a>
+        
+    <h1><a href="/date">Server Date Example</a></h1>
+    <p>Click this button to see the server's current date.</p>
+    <button onclick="showServerTime();">
+      Get date
+    </button>
+    <p id="date-container"></p>
+    <p>Click <a href="/date">here</a> to see the server response directly.</p>
+    
+    <button onclick="test();">
+        test
+      </button>
+    <p id="exp"></p>
     </div>
 </br>
-
+<a href="/tags/javascript/"><span class="tag tag-javascript tag-lg">#javascript</span></a>
+    <span class="tag">
+        Tag label
+      </span>
+      <!--Form-->
+      <form action="/form-handler" method="POST">
+        <p>Enter some text here:</p>
+        <textarea name="text-input">hello world</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+<!--client-side JavaScript and server-side Java-->
   </body>
 </html>
