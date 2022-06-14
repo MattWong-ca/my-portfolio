@@ -1,39 +1,22 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
-  text-align: center;
-}
-
-#greeting-container {
-  margin-top: 20px;
-}
-
-#body {
-    background-image: url('/images/cottonCandyBackground.jpeg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
+/*---Images---*/
 .profilePic {
     border-radius: 50%;
-    border: 8px solid #313335;
+    border: 8px solid #28ACEA;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 .socialMediaIcons {
     width: 45px;
     height: 45px;
     margin: 0px 5px 0px 5px;
 }
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.experienceLogos {
+    border-radius: 15%;
+    width: 180px;
+    height: 180px;
+    margin-right: 20px;
+}
 
 /*---Fonts---*/
 .fonts {
@@ -53,18 +36,40 @@
     font-size: 30px;
 }
 
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+  text-align: center;
+}
+
+#greeting-container {
+  margin-top: 20px;
+}
+
+/* #body {
+    background-image: url('/images/cottonCandyBackground.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+} */
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
 .test {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
 }
 
-.experienceLogos {
-    border-radius: 15%;
-    width: 180px;
-    height: 180px;
-    margin-right: 20px;
-}
+
 .taga {
     display: inline-block;
     border-radius: 3px;
@@ -112,4 +117,10 @@ body {
 }
 .cursor {
     cursor: url('/images/ProfilePic.png'), auto;
+}
+
+.inlineButton {
+    /* display: inline-block; */
+    margin: 0;
+    display: inline-flex;
 }

@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Matthew Wong 🎯</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png"/>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
+
   <body class="cursor">
+    <!--Top Half of Site-->
     <div id="content">
       <!--Introduction-->
       <h1 class="headerFont">Matthew Wong</h1>
       <img src="/images/ProfilePic.png" width="180" height="180" class="profilePic"/>
       <p class="mediumFont">Swift iOS Developer • Startups 🚀</p>
-      <p class="fonts">Hello, nice to meet you! I'm a mobile developer from Toronto, Canada. I'm currently working @ theScore as an iOS Developer, and previously worked in a technical support/ecommerce consulting role @ Shopify!</p>
+      <p class="fonts">Hello, nice to meet you! I'm a mobile developer from Toronto, Canada. I'm currently working @ theScore as an iOS Developer, and previously worked @ Shopify in a technical support/ecommerce consulting role!</p>
 
       <!--Social Media Icons-->
       <a href="https://github.com/MattWong-ca"><img src="/images/GitHub.png" class="socialMediaIcons"/></a>
@@ -21,64 +24,86 @@
       <a href="https://www.instagram.com/mattwong.ca/"><img src="/images/Instagram.png" class="socialMediaIcons"/></a>
       <a href="https://www.f6s.com/mattwong.ca"><img src="/images/F6S.png" class="socialMediaIcons"/></a>
 
-      <!--
-      <p class="fonts">Click <a href="/hello">here</a> to see content created by server code. Click here to get a random message:</p>
-      <button class="fonts" onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-      -->
-
     </div>
 
-
+    <!--Experience-->
     <div class="test">
-        <p class="headerFont"><a href="/experience" style="text-decoration:none;">Experience 💼</a></p>
+        <p class="headerFont"><a style="text-decoration:none;">Experience 💼</a></p>
         <a href="https://www.thescore.com/"><img src="/images/theScore.png" class="experienceLogos"/></a>
         <a href="https://www.shopify.com/"><img src="/images/Shopify.jpeg" class="experienceLogos"/></a>
         <a href="https://www.foundersboost.com/"><img src="/images/FoundersBoost.jpeg" class="experienceLogos"/></a>
     </div>
-</br>
+    </br>
+
+    <!--Skills-->
     <div class="test">
         <p class="headerFont">Skills 🛠</p>
         <p class="fonts">Languages/Frameworks: Swift, Java, C#, C++, JavaScript, HTML, CSS</p>
-        <span class="taga">Languages/Frameworks:</span>
-        <p class="fonts">Languages/Frameworks:</p>
-        <p class="fonts">Languages/Frameworks:</p>
+        <p class="fonts">Tools/Technologies: Git/GitHub</p>
+        <p class="fonts">APIs: </p>
     </div>
-</br>
+    </br>
+
+    <!--Projects-->
     <div class="test">
         <p class="headerFont">Projects 💡</p>
+        <p class="fonts">[PLACEHOLDER: WILL USE CARDS OR CAROUSEL TO DISPLAY PROJECTS]</p>
     </div>
-</br>
+    </br>
+
+    <!--Interests-->
     <div class="test">
         <p class="headerFont">Interests 🏀</p>
         <a href="#"><img src="/images/Raptors.png" class="experienceLogos"/></a>
         <a href="#"><img src="/images/Travelling.png" class="experienceLogos"/></a>
-        
-    <h1><a href="/date">Server Date Example</a></h1>
-    <p>Click this button to see the server's current date.</p>
-    <button onclick="showServerTime();">
-      Get date
-    </button>
-    <p id="date-container"></p>
-    <p>Click <a href="/date">here</a> to see the server response directly.</p>
-    
-    <button onclick="test();">
-        test
-      </button>
-    <p id="exp"></p>
     </div>
-</br>
-<a href="/tags/javascript/"><span class="tag tag-javascript tag-lg">#javascript</span></a>
-    <span class="tag">
-        Tag label
-      </span>
-      <!--Form-->
-      <form action="/form-handler" method="POST">
-        <p>Enter some text here:</p>
-        <textarea name="text-input">hello world</textarea>
+    </br>
+
+    <!--Just For Fun-->
+    <div class="test">
+    <p class="headerFont">Just for Fun 😄</p>
+        
+        <!--Fun Facts-->
+        <p class="mediumFont"">Fun Fact:</p>
+        <p class="fonts">Click <a href="/hello">here</a> to see content created by server code. Click here to get a random message:</p>
+        <button class="fonts" onclick="addRandomGreeting()">Hello</button>
+        <div class="fonts" id="greeting-container"></div>
+
+        <!--Server Date-->
+        <p class="mediumFont"">Today is...</p>
+        <p class="fonts">Click this button to see the server's current date:</p>
+        <button onclick="showServerTime();" class=" fonts">Today is...</button>
+        <p class="fonts" id="date-container"></p>
+        <p class="fonts">Click <a href="/date">here</a> to see the server response directly.</p>
+        
+        <!--JSON--><!--client-side JavaScript and server-side Java-->
+        <p class="mediumFont"">JSON</p>
+        <p class="fonts">Click <a href="/experience">here</a> to see JSON. Click the button to see the server-side JSON:</p>
+        <button class="fonts" onclick="test();">JSON</button>
+        <p class="fonts" id="exp"></p>
+    </div>
+    </br>
+
+    <!--Form-->
+    <div id="content">
+    <h1 class="headerFont">Contact me!</h1>
+    <form action="/form-handler" method="POST">
+        <p class="fonts">Send me a message here:</p>
+        <textarea name="text-input" class="fonts">Hi Matt,</textarea>
         <br/>
-        <input type="submit" />
-      </form>
-<!--client-side JavaScript and server-side Java-->
+        <input type="submit" value="Send!" class="fonts"/>
+    </form>
+    </div>
+
   </body>
 </html>
+
+<!--
+FAILED TAG LABEL CODE
+
+<a href="/tags/javascript/"><span class="tag tag-javascript tag-lg">#javascript</span></a>
+<span class="tag">
+    Tag label
+</span>
+
+-->

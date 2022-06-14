@@ -31,7 +31,7 @@ public class FormHandlerServlet extends HttpServlet {
             .build();
     datastore.put(taskEntity);
 
-    response.sendRedirect("/index.html");
+    // response.sendRedirect("/index.html");
 
     // Write the value to the response so the user can see it.
     response.getWriter().println("You submitted: " + textValue);
