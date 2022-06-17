@@ -36,40 +36,103 @@
     font-size: 30px;
 }
 
-#content {
+/*---DivContent---*/
+.centerDivContent {
   margin-left: auto;
   margin-right: auto;
   width: 650px;
   text-align: center;
 }
-
-#greeting-container {
-  margin-top: 20px;
-}
-
-/* #body {
-    background-image: url('/images/cottonCandyBackground.jpeg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-} */
-
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-
-.test {
+.wideDivContent {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
 }
 
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
 
+/*--ButtonContainers--*/
+#funFact-container {
+  /* margin-top: 10px; */
+  display: inline-block;
+}
+#date-container {
+    display: inline-block;
+}
+#exp {
+    display: inline-block;
+}
+
+.textBesideImg {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cursor {
+    cursor: url('/images/ProfilePic.png'), auto;
+}
+
+.inlineButton {
+    /* display: inline-block; */
+    margin: 0;
+    display: inline-flex;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  /* width: 25%; */
+  width: 242px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.abc {
+  padding: 2px 16px;
+}
+
+/* hover */
+.container {
+  position: relative;
+  width: 100%;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #28ACEA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+.container:hover .overlay {
+  height: 100%;
+}
+/* FAILED CSS CODE
+:root {
+    --red:#ff3860;--red-dark:#ff1443;--red-light:#ff5c7c;--blue:#498afb;--blue-dark:#2674fa;--blue-light:#6ca0fc;--orange:#fa8142;--orange-dark:#f96a1f;--orange-light:#fb9865;--green:#09c372;--green-dark:#07a15e;--green-light:#0be586;--purple:#9166cc;--purple-dark:#7d4bc3;--purple-light:#a481d5;--yellow:#ffdd57;--yellow-dark:#ffd633;--yellow-light:#ffe47a;--pink:#ff4088;--pink-dark:#ff1c72;--pink-light:#ff649e;--gray0:#f8f8f8;--gray1:#dbe1e8;--gray2:#b2becd;--gray3:#6c7983;--gray4:#454e56;--gray5:#2a2e35;--gray6:#12181b;--nav-width:4em;--font-body:"sofia-pro",sans-serif;--font-head:"sofia-pro",sans-serif;--font-code:"attribute-mono",monospace;--font-size:20px;--max-width-bp:768px;--orange-pink:linear-gradient(to bottom right,var(--orange-light),var(--orange-dark) 85%);--green-grad:linear-gradient(to bottom right,var(--green-light),var(--green-dark) 85%);--background:var(--gray6);--text-color:var(--gray2);--h-color:#fff;--nav-shadow:4px 0 10px -3px #010101;--card-shadow:0 4px 8px rgba(0,0,0,0.38);--toc-shadow:rgba(0,0,0,0.7) 0px 10px 20px 0px;--nav-bg:var(--gray5);--tag-bg:var(--gray4);--code-bg:#22262f;--card-bg:var(--gray5);--overlay-bg:rgba(0,0,0,0.9);--h-border:2px dashed var(--nav-bg);--nav-border:2px dashed var(--text-color);--card-radius:0.25em;transition: all .3s ease
+}
+body {
+    background: var(--background);
+    color: var(--text-color);
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--font-size);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column
+}
 .taga {
     display: inline-block;
     border-radius: 3px;
@@ -99,28 +162,4 @@
 .tag-lg {
     font-size: 1.2em;
     border-radius: 4px
-}
-/*
-:root {
-    --red:#ff3860;--red-dark:#ff1443;--red-light:#ff5c7c;--blue:#498afb;--blue-dark:#2674fa;--blue-light:#6ca0fc;--orange:#fa8142;--orange-dark:#f96a1f;--orange-light:#fb9865;--green:#09c372;--green-dark:#07a15e;--green-light:#0be586;--purple:#9166cc;--purple-dark:#7d4bc3;--purple-light:#a481d5;--yellow:#ffdd57;--yellow-dark:#ffd633;--yellow-light:#ffe47a;--pink:#ff4088;--pink-dark:#ff1c72;--pink-light:#ff649e;--gray0:#f8f8f8;--gray1:#dbe1e8;--gray2:#b2becd;--gray3:#6c7983;--gray4:#454e56;--gray5:#2a2e35;--gray6:#12181b;--nav-width:4em;--font-body:"sofia-pro",sans-serif;--font-head:"sofia-pro",sans-serif;--font-code:"attribute-mono",monospace;--font-size:20px;--max-width-bp:768px;--orange-pink:linear-gradient(to bottom right,var(--orange-light),var(--orange-dark) 85%);--green-grad:linear-gradient(to bottom right,var(--green-light),var(--green-dark) 85%);--background:var(--gray6);--text-color:var(--gray2);--h-color:#fff;--nav-shadow:4px 0 10px -3px #010101;--card-shadow:0 4px 8px rgba(0,0,0,0.38);--toc-shadow:rgba(0,0,0,0.7) 0px 10px 20px 0px;--nav-bg:var(--gray5);--tag-bg:var(--gray4);--code-bg:#22262f;--card-bg:var(--gray5);--overlay-bg:rgba(0,0,0,0.9);--h-border:2px dashed var(--nav-bg);--nav-border:2px dashed var(--text-color);--card-radius:0.25em;transition: all .3s ease
-}
-*/
-body {
-    background: var(--background);
-    color: var(--text-color);
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: var(--font-size);
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column
-}
-.cursor {
-    cursor: url('/images/ProfilePic.png'), auto;
-}
-
-.inlineButton {
-    /* display: inline-block; */
-    margin: 0;
-    display: inline-flex;
-}
+} */

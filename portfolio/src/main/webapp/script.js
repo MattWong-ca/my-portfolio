@@ -12,19 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['I am a huge Toronto Raptors and Blue Jays fan', 'I am currently working at theScore as an iOS Developer!', 'I want to pursue entrepreneurship in the future!', 'I am interested in web3!'];
+//Adds a random fun fact about me to the page
+function funFactsAboutMe() {
+  const funFacts =
+      [' huge Toronto Raptors and Blue Jays fan! 🏀 ⚾',
+          ' iOS Developer @ theScore! 📱',
+          ' budding entrepreneur! 🚀',
+          ' Web3 enthusiast! 🔮'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const funFact = funFacts[Math.floor(Math.random() * funFacts.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    const funFactContainer = document.getElementById('funFact-container');
+    funFactContainer.innerText = funFact;
 }
 
 async function showServerTime() {

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Wong 🎯</title>
-    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png" />
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
+</head>
 
   <body class="cursor">
     <!--Top Half of Site-->
-    <div id="content">
+    <div class="centerDivContent">
       <!--Introduction-->
       <h1 class="headerFont">Matthew Wong</h1>
       <img src="/images/ProfilePic.png" width="180" height="180" class="profilePic"/>
@@ -27,7 +28,7 @@
     </div>
 
     <!--Experience-->
-    <div class="test">
+    <div class="wideDivContent">
         <p class="headerFont"><a style="text-decoration:none;">Experience 💼</a></p>
         <a href="https://www.thescore.com/"><img src="/images/theScore.png" class="experienceLogos"/></a>
         <a href="https://www.shopify.com/"><img src="/images/Shopify.jpeg" class="experienceLogos"/></a>
@@ -36,56 +37,99 @@
     </br>
 
     <!--Skills-->
-    <div class="test">
+    <div class="wideDivContent">
         <p class="headerFont">Skills 🛠</p>
-        <p class="fonts">Languages/Frameworks: Swift, Java, C#, C++, JavaScript, HTML, CSS</p>
-        <p class="fonts">Tools/Technologies: Git/GitHub</p>
-        <p class="fonts">APIs: </p>
+        <p class="fonts"><u>Languages/Frameworks:</u></br>Swift • UIKit • SwiftUI • Java • C# • GraphQL • C++ • JavaScript • HTML • CSS • MATLAB • React Native</p>
+        <p class="fonts"><u>Tools/Technologies:</u></br>Git/GitHub/GitLab • Xcode • CocoaPods • JSON • VS Code • Geany • .NET • CLion • Android Studio</p>
+        <p class="fonts"><u>APIs:</u></br>CoinAPI • OpenWeather</p>
     </div>
     </br>
 
     <!--Projects-->
-    <div class="test">
+    <div class="wideDivContent">
         <p class="headerFont">Projects 💡</p>
-        <p class="fonts">[PLACEHOLDER: WILL USE CARDS OR CAROUSEL TO DISPLAY PROJECTS]</p>
+
+        <div style="overflow: hidden;">
+        <div class="card" style="float:left;">
+            <div class="abc">
+                <p class="fonts" style="text-align: center;">BMI Calculator 🏋️</p>
+            </div>
+            <div class="container">
+                <a href="https://github.com/MattWong-ca/BodyMassIndexCalculator"><img src="/images/BMICalcSS.png" width="242" 
+                    height="451" class="image" style="width:100%"></a>
+            </div>
+        </div>
+
+        <div class="card" style="display: inline-block;">
+            <div class="abc">
+                <p class="fonts" style="text-align: center;">Crypto Converter 💸</p>
+            </div>
+            <div class="container">
+                <img src="/images/ByteCoinSS.png" width="242"
+                    height="451" class="image" style="width:100%">
+            </div>
+        </div>
+
+        <div class="card" style="float:left;">
+            <div class="abc">
+                <p class="fonts" style="text-align: center;">Live Weather App 🌤️</p>
+            </div>
+            <div class="container">
+                <img src="/images/ClimaSS.png" href="https://github.com/MattWong-ca/LiveWeatherApp" width="242" height="451"
+                    class="image" style="width:100%">
+            </div>
+        </div>
+
+        <div class="card" style="float:left;">
+            <div class="abc">
+                <p class="fonts" style="text-align: center;">Quizzler 📚</p>
+            </div>
+            <div class="container">
+                <img src="/images/QuizzlerSS.png" href="https://github.com/MattWong-ca/MultipleChoiceQuiz" width="242" height="451" class="image" style="width:100%">
+            </div>
+        </div>
+
+        </div>
+
     </div>
     </br>
 
-    <!--Interests-->
-    <div class="test">
+    <!--Interests [ON HOLD]
+    <div class="wideDivContent">
         <p class="headerFont">Interests 🏀</p>
         <img src="/images/Raptors.png" class="experienceLogos"/>
+        <p class="fonts textBesideImg">I've been a huge Toronto Raptors fan since 2015!</p>
         <img src="/images/Travelling.png" class="experienceLogos"/>
     </div>
     </br>
+    -->
 
     <!--Just For Fun-->
-    <div class="test">
+    <div class="wideDivContent">
     <p class="headerFont">Just for Fun 😄</p>
         
         <!--Fun Facts-->
-        <p class="mediumFont"">Fun Fact:</p>
-        <p class="fonts">Click <a href="/hello">here</a> to see content created by server code. Click here to get a random message:</p>
-        <button class="fonts" onclick="addRandomGreeting()">Hello</button>
-        <div class="fonts" id="greeting-container"></div>
+        <p class="mediumFont""><u>Fun Fact:</u></p>
+        <p class="fonts">Click the button to get a random fact about me:</p>
+        <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
+        <div class="fonts" id="funFact-container"></div>
 
         <!--Server Date-->
-        <p class="mediumFont"">Today is...</p>
-        <p class="fonts">Click this button to see the server's current date:</p>
+        <p class="mediumFont""><u>Today is...</u></p>
+        <p class="fonts">Click <a href="/date">here</a> or this button to see the server's current date:</p>
         <button onclick="showServerTime();" class=" fonts">Today is...</button>
-        <p class="fonts" id="date-container"></p>
-        <p class="fonts">Click <a href="/date">here</a> to see the server response directly.</p>
+        <div class="fonts" id="date-container"></div>
         
         <!--JSON--><!--client-side JavaScript and server-side Java-->
-        <p class="mediumFont"">JSON</p>
+        <p class="mediumFont""><u>JSON</u></p>
         <p class="fonts">Click <a href="/experience">here</a> to see JSON. Click the button to see the server-side JSON:</p>
         <button class="fonts" onclick="test();">JSON</button>
-        <p class="fonts" id="exp"></p>
+        <div class="fonts" id="exp"></div>
     </div>
     </br>
 
     <!--Form-->
-    <div id="content">
+    <div class="centerDivContent">
     <h1 class="headerFont">Contact me!</h1>
     <form action="/form-handler" method="POST">
         <p class="fonts">Send me a message here:</p>
