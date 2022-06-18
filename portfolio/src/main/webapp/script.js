@@ -41,9 +41,40 @@ async function fetchJSON() {
     const jsonArray = await responseFromServer.json();
     // const jsonArray = await responseFromServer.text();
     // console.log(jsonArray[0].name);
-    console.log(jsonArray[0]);
+    console.log(jsonArray[1]);
 
     const jsonContainer = document.getElementById('json-container');
     // jsonContainer.innerText = jsonArray[0].name;
-    jsonContainer.innerText = jsonArray[0];
+    // jsonContainer.HTML = jsonArray;
+    jsonContainer.innerText = jsonArray[1];
 }
+
+
+
+
+
+
+// /** Fetches stats from the server and adds them to the page. */
+// async function getServerStats() {
+//     // The json() function returns an object that contains fields that we can
+//     // reference to create HTML.
+
+//     const statsListElement = document.getElementById('server-stats-container');
+//     statsListElement.innerHTML = '';
+
+//     statsListElement.appendChild(
+//         createListElement('Start time: ' + stats.startTime));
+//     statsListElement.appendChild(
+//         createListElement('Current time: ' + stats.currentTime));
+//     statsListElement.appendChild(
+//         createListElement('Max memory: ' + stats.maxMemory));
+//     statsListElement.appendChild(
+//         createListElement('Used memory: ' + stats.usedMemory));
+// }
+
+// /** Creates an <li> element containing text. */
+// function createListElement(text) {
+//     const liElement = document.createElement('li');
+//     liElement.innerText = text;
+//     return liElement;
+// }

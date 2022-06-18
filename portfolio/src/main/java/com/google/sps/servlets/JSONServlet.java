@@ -13,25 +13,26 @@ import java.util.Arrays;
 @WebServlet("/JSONarray")
 public class JSONServlet extends HttpServlet {
 
-    ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList(
-        "{\"name\": \"Kobe Bryant\", \"jerseyNumber\": 8}",
-        "{\"name\": \"Michael Jordan\", \"jerseyNumber\": 23}",
-            "{\"name\": \"Steph Curry\", \"jerseyNumber\": 30}"));
+    
         
-    ArrayList<String> jsonArray2 = new ArrayList<>(Arrays.asList(
-            "1",
-            "2",
-            "3"));
-    String json = convertToJsonUsingGson(jsonArray2);
-
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     //   response.setContentType("text/html;");
     //   response.getWriter().println(jsonArray);
 
+    // Convert the server stats to JSON
+    ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList("1", "2", "3"));
     response.setContentType("application/json;");
-    response.getWriter().println(json);
+    // ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList(
+    //         "{\"name\": \"Kobe Bryant\", \"jerseyNumber\": 8}",
+    //         "{\"name\": \"Michael Jordan\", \"jerseyNumber\": 23}",
+    //         "{\"name\": \"Steph Curry\", \"jerseyNumber\": 30}"));
 
+    String json = convertToJsonUsingGson(jsonArray);
+
+    // Send the JSON as the response
+    
+    response.getWriter().println(json);
       // response.sendRedirect("https://google.com");
 
   }
