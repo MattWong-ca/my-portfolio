@@ -13,33 +13,26 @@ import java.util.Arrays;
 @WebServlet("/JSONarray")
 public class JSONServlet extends HttpServlet {
 
-    
-        
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    //   response.setContentType("text/html;");
-    //   response.getWriter().println(jsonArray);
-
-    // Convert the server stats to JSON
-    ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList("1", "2", "3"));
+    // Initialize ArrayList and convert its type to JSON
+    ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList(" JSON is cool", " GraphQL is cool", " Gson is cool"));
     response.setContentType("application/json;");
+
+    // Uncomment + use this ArrayList once an athlete object is created (To be done)
     // ArrayList<String> jsonArray = new ArrayList<>(Arrays.asList(
     //         "{\"name\": \"Kobe Bryant\", \"jerseyNumber\": 8}",
     //         "{\"name\": \"Michael Jordan\", \"jerseyNumber\": 23}",
     //         "{\"name\": \"Steph Curry\", \"jerseyNumber\": 30}"));
-
-    String json = convertToJsonUsingGson(jsonArray);
+    
+    // Convert to JSON using Gson
+    Gson gson = new Gson();
+    String json = gson.toJson(jsonArray);
 
     // Send the JSON as the response
-    
     response.getWriter().println(json);
-      // response.sendRedirect("https://google.com");
 
-  }
-  
-  private String convertToJsonUsingGson(ArrayList<String> testArray) {
-      Gson gson = new Gson();
-      String json = gson.toJson(testArray);
-      return json;
+    // To be done later: create a proper redirect
+    // response.sendRedirect("link");
   }
 }

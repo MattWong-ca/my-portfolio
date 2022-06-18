@@ -37,45 +37,15 @@ async function showServerTime() {
 
 //Adds JSON data to the page inside jsonContainer
 async function fetchJSON() {
+    // Fetches JSON from server and turns it into JSON
     const responseFromServer = await fetch('/JSONarray');
     const jsonArray = await responseFromServer.json();
-    // const jsonArray = await responseFromServer.text();
-    // console.log(jsonArray[0].name);
-    console.log(jsonArray[1]);
-    console.log(jsonArray);
 
+    // Prints out entire JSON array as well as 2nd element into console
+    console.log(jsonArray);
+    console.log(jsonArray[1]);
+
+    // Sets text in jsonContainer to be entire JSON array
     const jsonContainer = document.getElementById('json-container');
-    // jsonContainer.innerText = jsonArray[0].name;
-    // jsonContainer.HTML = jsonArray;
     jsonContainer.innerText = jsonArray;
 }
-
-
-
-
-
-
-// /** Fetches stats from the server and adds them to the page. */
-// async function getServerStats() {
-//     // The json() function returns an object that contains fields that we can
-//     // reference to create HTML.
-
-//     const statsListElement = document.getElementById('server-stats-container');
-//     statsListElement.innerHTML = '';
-
-//     statsListElement.appendChild(
-//         createListElement('Start time: ' + stats.startTime));
-//     statsListElement.appendChild(
-//         createListElement('Current time: ' + stats.currentTime));
-//     statsListElement.appendChild(
-//         createListElement('Max memory: ' + stats.maxMemory));
-//     statsListElement.appendChild(
-//         createListElement('Used memory: ' + stats.usedMemory));
-// }
-
-// /** Creates an <li> element containing text. */
-// function createListElement(text) {
-//     const liElement = document.createElement('li');
-//     liElement.innerText = text;
-//     return liElement;
-// }
