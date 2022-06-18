@@ -9,7 +9,7 @@
     <script src="script.js"></script>
 </head>
 
-  <body class="cursor">
+  <body>
     <!--Top Half of Site-->
     <div class="centerDivContent">
       <!--Introduction-->
@@ -49,20 +49,20 @@
     <div class="wideDivContent">
         <p class="headerFont">Projects 💡</p>
 
-        <div style="overflow: hidden;">
-        <div class="card" style="float:left;">
-            <div class="abc">
-                <p class="fonts" style="text-align: center;">BMI Calculator 🏋️</p>
+        <div>
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">BMI Calculator 🏋️</p>
             </div>
             <div class="container">
                 <a href="https://github.com/MattWong-ca/BodyMassIndexCalculator"><img src="/images/BMICalcSS.png" width="242" 
-                    height="451" class="image" style="width:100%"></a>
+                    height="451" class="cardImage"></a>
             </div>
         </div>
 
-        <div class="card" style="display: inline-block;">
-            <div class="abc">
-                <p class="fonts" style="text-align: center;">Crypto Converter 💸</p>
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">Crypto Converter 💸</p>
             </div>
             <div class="container">
                 <img src="/images/ByteCoinSS.png" width="242"
@@ -70,9 +70,9 @@
             </div>
         </div>
 
-        <div class="card" style="float:left;">
-            <div class="abc">
-                <p class="fonts" style="text-align: center;">Live Weather App 🌤️</p>
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">Live Weather App 🌤️</p>
             </div>
             <div class="container">
                 <img src="/images/ClimaSS.png" href="https://github.com/MattWong-ca/LiveWeatherApp" width="242" height="451"
@@ -80,8 +80,8 @@
             </div>
         </div>
 
-        <div class="card" style="float:left;">
-            <div class="abc">
+        <div class="card">
+            <div class="cardTitle">
                 <p class="fonts" style="text-align: center;">Quizzler 📚</p>
             </div>
             <div class="container">
@@ -98,7 +98,7 @@
     <div class="wideDivContent">
         <p class="headerFont">Interests 🏀</p>
         <img src="/images/Raptors.png" class="experienceLogos"/>
-        <p class="fonts textBesideImg">I've been a huge Toronto Raptors fan since 2015!</p>
+        <p class="fonts textBesideImage">I've been a huge Toronto Raptors fan since 2015!</p>
         <img src="/images/Travelling.png" class="experienceLogos"/>
     </div>
     </br>
@@ -112,7 +112,7 @@
         <p class="mediumFont""><u>Fun Fact:</u></p>
         <p class="fonts">Click the button to get a random fact about me:</p>
         <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
-        <div class="fonts" id="funFact-container"></div>
+        <div class="fonts" id="funFacts-container"></div>
 
         <!--Server Date-->
         <p class="mediumFont""><u>Today is...</u></p>
@@ -122,9 +122,9 @@
         
         <!--JSON--><!--client-side JavaScript and server-side Java-->
         <p class="mediumFont""><u>JSON</u></p>
-        <p class="fonts">Click <a href="/experience">here</a> to see JSON. Click the button to see the server-side JSON:</p>
-        <button class="fonts" onclick="test();">JSON</button>
-        <div class="fonts" id="exp"></div>
+        <p class="fonts">Click <a href="/JSONarray">here</a> to see JSON. Click the button to see the server-side JSON:</p>
+        <button class="fonts" onclick="fetchJSON();">JSON</button>
+        <div class="fonts" id="json-container"></div>
     </div>
     </br>
 

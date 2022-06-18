@@ -12,36 +12,38 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//Adds a random fun fact about me to the page
+//Adds random fun fact about me to the page inside funFactContainer
 function funFactsAboutMe() {
   const funFacts =
       [' huge Toronto Raptors and Blue Jays fan! 🏀 ⚾',
-          ' iOS Developer @ theScore! 📱',
-          ' budding entrepreneur! 🚀',
-          ' Web3 enthusiast! 🔮'];
+        ' iOS Developer @ theScore! 📱',
+        ' budding entrepreneur! 🚀',
+        ' Web3 enthusiast! 🔮'];
 
-  const funFact = funFacts[Math.floor(Math.random() * funFacts.length)];
-
-    const funFactContainer = document.getElementById('funFact-container');
+    const funFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+    
+    const funFactContainer = document.getElementById('funFacts-container');
     funFactContainer.innerText = funFact;
 }
 
+//Adds current server time to the page inside dateContainer
 async function showServerTime() {
     const responseFromServer = await fetch('/date');
     const textFromResponse = await responseFromServer.text();
-  
+
     const dateContainer = document.getElementById('date-container');
     dateContainer.innerText = textFromResponse;
-  }
+}
 
-  async function test() {
-    const responseFromServer = await fetch('/experience');
-    // const textFromResponse = await responseFromServer.text();
-    const hi = await responseFromServer.json();
-    console.log(hi[0].name);
-    console.log("Hi");
+//Adds JSON data to the page inside jsonContainer
+async function fetchJSON() {
+    const responseFromServer = await fetch('/JSONarray');
+    const jsonArray = await responseFromServer.json();
+    // const jsonArray = await responseFromServer.text();
+    // console.log(jsonArray[0].name);
+    console.log(jsonArray[0]);
 
-    const dateContainer = document.getElementById('exp');
-    // dateContainer.innerText = textFromResponse;
-    dateContainer.innerText = hi[0].name;
-  }
+    const jsonContainer = document.getElementById('json-container');
+    // jsonContainer.innerText = jsonArray[0].name;
+    jsonContainer.innerText = jsonArray[0];
+}
