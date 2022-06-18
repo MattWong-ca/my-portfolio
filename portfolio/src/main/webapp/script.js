@@ -42,11 +42,12 @@ async function fetchJSON() {
     // const jsonArray = await responseFromServer.text();
     // console.log(jsonArray[0].name);
     console.log(jsonArray[1]);
+    console.log(jsonArray);
 
     const jsonContainer = document.getElementById('json-container');
     // jsonContainer.innerText = jsonArray[0].name;
     // jsonContainer.HTML = jsonArray;
-    jsonContainer.innerText = jsonArray[1];
+    jsonContainer.innerText = jsonArray;
 }
 
 
