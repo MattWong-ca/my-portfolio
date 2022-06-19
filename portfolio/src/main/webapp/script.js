@@ -49,3 +49,17 @@ async function fetchJSON() {
     const jsonContainer = document.getElementById('json-container');
     jsonContainer.innerText = jsonArray;
 }
+
+// testing
+async function testing() {
+    // Fetches JSON from server and turns it into JSON
+    const responseFromServer = await fetch('/form-responses');
+    const responsesList = await responseFromServer.text();
+
+    // Prints out entire JSON array as well as 2nd element into console
+    console.log(responsesList);
+
+    // Sets text in jsonContainer to be entire JSON array
+    const jsonContainer = document.getElementById('form-container');
+    jsonContainer.innerHTML = responsesList;
+}

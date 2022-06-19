@@ -10,12 +10,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+// Do later: import jSoup to sanitize user input
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // DO LATER: Sanitize user input to remove HTML tags and JavaScript.
+    // String title = Jsoup.clean(request.getParameter("text-input"), Whitelist.none());
 
     // Get the value entered in the form.
     String textValue = request.getParameter("text-input");
@@ -30,8 +33,6 @@ public class FormHandlerServlet extends HttpServlet {
             .set("textValue", textValue)
             .build();
     datastore.put(taskEntity);
-
-    // response.sendRedirect("/index.html");
 
     // Write the value to the response so the user can see it.
     response.getWriter().println("You submitted: " + textValue);
