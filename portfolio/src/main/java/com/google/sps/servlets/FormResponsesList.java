@@ -1,47 +1,49 @@
-// package com.google.sps.servlets;
+package com.google.sps.servlets;
 
-// import com.google.cloud.datastore.Datastore;
-// import com.google.cloud.datastore.DatastoreOptions;
-// import com.google.cloud.datastore.Entity;
-// import com.google.cloud.datastore.Query;
-// import com.google.cloud.datastore.QueryResults;
-// import com.google.cloud.datastore.StructuredQuery.OrderBy;
-// import com.google.sps.servlets.data.Task;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
+import com.google.sps.servlets.Message;
 
-// import com.google.gson.Gson;
-// import java.io.IOException;
-// import java.util.ArrayList;
-// import java.util.List;
-// import javax.servlet.annotation.WebServlet;
-// import javax.servlet.http.HttpServlet;
-// import javax.servlet.http.HttpServletRequest;
-// import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-// // Servlet responsible for listing form responses
-// @WebServlet("/form-responses")
-// public class FormResponsesList extends HttpServlet {
-//     @Override
-//     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-//         Query<Entity> query = Query.newEntityQueryBuilder().setKind("Task").setOrderBy(OrderBy.desc("timestamp"))
-//                 .build();
-//         QueryResults<Entity> results = datastore.run(query);
+// Servlet responsible for listing form responses
+@WebServlet("/form-responses")
+public class FormResponsesList extends HttpServlet {
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message") //.setOrderBy(OrderBy.desc("timestamp"))
+                .build();
+        QueryResults<Entity> results = datastore.run(query);
 
-//         List<Task> formResponses = new ArrayList<>();
-//         while (results.hasNext()) {
-//             Entity entity = results.next();
+        // List<Task> formResponses = new ArrayList<>();
+        List<Message> formResponses = new ArrayList<>();
+        while (results.hasNext()) {
+            Entity entity = results.next();
 
-//             long id = entity.getKey().getId();
-//             String textValue = entity.getString("text-input");
-//             long timestamp = entity.getLong("timestamp");
+            // long id = entity.getKey().getId();
+            String textValue = entity.getString("textValue");
+            // long timestamp = entity.getLong("timestamp");
 
-//             Task oneTask = new Task(id, timestamp, textValue);
-//             formResponses.add(oneTask);
-//         }
+            // Task oneTask = new Task(id, timestamp, textValue);
+            Message oneMessage = new Message(textValue);
+            formResponses.add(oneMessage);
+        }
 
-//         Gson gson = new Gson();
+        Gson gson = new Gson();
 
-//         response.setContentType("application/json;");
-//         response.getWriter().println(gson.toJson(formResponses));
-//     }
-// }
+        response.setContentType("application/json;");
+        response.getWriter().println(gson.toJson(formResponses));
+    }
+}

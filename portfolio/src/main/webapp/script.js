@@ -50,18 +50,22 @@ async function fetchJSON() {
     jsonContainer.innerText = jsonArray;
 }
 
-// testing
+//Lists out form responses by iterating through ArrayList
 async function testing() {
     // Fetches JSON from server and turns it into JSON
     const responseFromServer = await fetch('/form-responses');
-    const responsesList = await responseFromServer.text();
+    const responsesList = await responseFromServer.json();
 
     // Prints out entire JSON array
     console.log(responsesList);
+    console.log(responsesList[0].message)
 
     // Sets text in jsonContainer to be entire JSON array
-    const jsonContainer = document.getElementById('form-container');
-    jsonContainer.innerHTML = responsesList;
+    const formContainer = document.getElementById('form-container');
+    // formContainer.innerText = responsesList[0].message;
+    for (let i = 0; i < responsesList.length; i++) {
+        formContainer.innerText += responsesList[i].message + "---";
+    }
 }
 
 function loadTasks() {
