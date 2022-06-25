@@ -93,10 +93,10 @@
 }
 
 
+/* Not used, will add back in later */
 #task-list {
   list-style-type: none;
 }
-
 .task {
   border: thin solid black;
   display: flex;
@@ -104,7 +104,6 @@
   padding: 10px;
   width: 300px;
 }
-
 .task span {
   flex-grow: 1;
 }

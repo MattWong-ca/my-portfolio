@@ -51,56 +51,57 @@ async function fetchJSON() {
 }
 
 //Lists out form responses by iterating through ArrayList
-async function testing() {
+async function fetchResponseList() {
     // Fetches JSON from server and turns it into JSON
     const responseFromServer = await fetch('/form-responses');
     const responsesList = await responseFromServer.json();
 
-    // Prints out entire JSON array
+    // Prints out entire ArrayList and its 1st message
     console.log(responsesList);
     console.log(responsesList[0].message)
 
-    // Sets text in jsonContainer to be entire JSON array
+    // Sets text in formContainer to be entire ArrayList of messages
     const formContainer = document.getElementById('form-container');
-    // formContainer.innerText = responsesList[0].message;
     for (let i = 0; i < responsesList.length; i++) {
-        formContainer.innerText += responsesList[i].message + "---";
+        formContainer.innerText += responsesList[i].message + "💬";
     }
 }
 
-function loadTasks() {
-    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-        const taskListElement = document.getElementById('task-list');
-        tasks.forEach((task) => {
-            taskListElement.appendChild(createTaskElement(task));
-        })
-    });
-}
-/** Creates an element that represents a task, including its delete button. */
-function createTaskElement(task) {
-    const taskElement = document.createElement('li');
-    taskElement.className = 'task';
+// Not used, will uncomment when I have time to re-add
 
-    const titleElement = document.createElement('span');
-    titleElement.innerText = task.title;
+// function loadTasks() {
+//     fetch('/list-tasks').then(response => response.json()).then((tasks) => {
+//         const taskListElement = document.getElementById('task-list');
+//         tasks.forEach((task) => {
+//             taskListElement.appendChild(createTaskElement(task));
+//         })
+//     });
+// }
+// Creates an element that represents a task, including its delete button
+// function createTaskElement(task) {
+//     const taskElement = document.createElement('li');
+//     taskElement.className = 'task';
 
-    const deleteButtonElement = document.createElement('button');
-    deleteButtonElement.innerText = 'Delete';
-    deleteButtonElement.addEventListener('click', () => {
-        deleteTask(task);
+//     const titleElement = document.createElement('span');
+//     titleElement.innerText = task.title;
+
+//     const deleteButtonElement = document.createElement('button');
+//     deleteButtonElement.innerText = 'Delete';
+//     deleteButtonElement.addEventListener('click', () => {
+//         deleteTask(task);
 
         // Remove the task from the DOM.
-        taskElement.remove();
-    });
+//         taskElement.remove();
+//     });
 
-    taskElement.appendChild(titleElement);
-    taskElement.appendChild(deleteButtonElement);
-    return taskElement;
-}
+//     taskElement.appendChild(titleElement);
+//     taskElement.appendChild(deleteButtonElement);
+//     return taskElement;
+// }
 
 /** Tells the server to delete the task. */
-function deleteTask(task) {
-    const params = new URLSearchParams();
-    params.append('id', task.id);
-    fetch('/delete-task', { method: 'POST', body: params });
-}
+// function deleteTask(task) {
+//     const params = new URLSearchParams();
+//     params.append('id', task.id);
+//     fetch('/delete-task', { method: 'POST', body: params });
+// }

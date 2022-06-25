@@ -23,20 +23,16 @@ public class FormResponsesList extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message") //.setOrderBy(OrderBy.desc("timestamp"))
+        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message")
                 .build();
         QueryResults<Entity> results = datastore.run(query);
 
-        // List<Task> formResponses = new ArrayList<>();
         List<Message> formResponses = new ArrayList<>();
         while (results.hasNext()) {
             Entity entity = results.next();
 
-            // long id = entity.getKey().getId();
             String textValue = entity.getString("textValue");
-            // long timestamp = entity.getLong("timestamp");
 
-            // Task oneTask = new Task(id, timestamp, textValue);
             Message oneMessage = new Message(textValue);
             formResponses.add(oneMessage);
         }

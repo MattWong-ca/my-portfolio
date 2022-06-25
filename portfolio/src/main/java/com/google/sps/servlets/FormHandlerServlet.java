@@ -25,18 +25,14 @@ public class FormHandlerServlet extends HttpServlet {
       System.out.println("You submitted: " + textValue);
 
       Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    //   KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
       KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
       FullEntity taskEntity = Entity.newBuilder(keyFactory.newKey())
-              // .set("title", title)
               .set("textValue", textValue)
-              // .set("timestamp", timestamp)
               .build();
       datastore.put(taskEntity);
 
       // Write the value to the response so the user can see it
       response.setContentType("text/html;");
       response.getWriter().println("You submitted: " + textValue);
-      // response.sendRedirect("/index.html");
   }
 }
