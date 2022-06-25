@@ -138,15 +138,35 @@
     <h1 class="headerFont">Contact me!</h1>
     <form action="/form-handler" method="POST">
         <p class="fonts">Send me a message here:</p>
-        <textarea name="text-input" class="fonts">Hi Matt,</textarea>
+        <textarea name="text-input" class="fonts" placeholder="Your message"></textarea>
         <br/>
         <input type="submit" value="Send!" class="fonts"/>
     </form>
     </div>
 
 
-    <button class="fonts" onclick="testing();">JSON</button>
+    <button class="fonts" onclick="testing();">This Doesn't work</button>
     <div class="fonts" id="form-container"></div>
+
+    <div onload="loadTasks()">
+    <h1>Todo List</h1>
+    
+    <form method="POST" action="/new-task">
+        <input type="text" name="title" />
+        <br />
+        <button>Submit</button>
+    </form>
+    
+    <hr />
+    
+    <ul id="task-list"></ul>
+    </div>
+
+
+
+    <p>
+    View <a href="tasks.html">Tasks</a>.
+    </p>
 
   </body>
 </html>
