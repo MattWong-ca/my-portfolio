@@ -11,20 +11,29 @@
 
   <body>
     <!--Top Half of Site-->
-    <div class="centerDivContent">
-      <!--Introduction-->
-      <h1 class="headerFont">Matthew Wong</h1>
-      <img src="/images/ProfilePic.png" width="180" height="180" class="profilePic"/>
-      <p class="mediumFont">Swift iOS Developer • Startups 🚀</p>
-      <p class="fonts">Hello, nice to meet you! I'm a mobile developer from Toronto, Canada. I'm currently working @ theScore as an iOS Developer, and previously worked @ Shopify in a technical support/ecommerce consulting role!</p>
+    <div class="landingPage">
+        <!--Introduction-->
+        <h1 class="nameTitleFont">Matthew Wong</h1>
+        <img src="/images/ProfilePic.png" width="230" height="230" class="profilePic" />
+        </br>
 
-      <!--Social Media Icons-->
-      <a href="https://github.com/MattWong-ca"><img src="/images/GitHub.png" class="socialMediaIcons"/></a>
-      <a href="https://www.linkedin.com/in/mattwong-ca/"><img src="/images/LinkedIn.png" class="socialMediaIcons"/></a>
-      <a href="https://twitter.com/mattwong_ca"><img src="/images/Twitter.png" class="socialMediaIcons"/></a>
-      <a href="https://www.instagram.com/mattwong.ca/"><img src="/images/Instagram.png" class="socialMediaIcons"/></a>
-      <a href="https://www.f6s.com/mattwong.ca"><img src="/images/F6S.png" class="socialMediaIcons"/></a>
+        <!-- Typing effect -->
+        <a class="typewrite hi mediumFont" data-period="2000"
+            data-type='["Swift iOS Developer", "Java Android Developer", "Aspiring Founder"]'>
+            <span class="wrap">|</span>
+        </a>
 
+        <p class="fonts">
+            Hello, nice to meet you! I'm a mobile developer from Toronto, Canada. I'm currently working @ theScore
+            as an iOS Developer, and previously worked @ Shopify in a technical support/ecommerce consulting role!
+        </p>
+        
+        <!--Social Media Icons-->
+        <a href="https://github.com/MattWong-ca"><img src="/images/GitHub.png" class="socialMediaIcons" /></a>
+        <a href="https://www.linkedin.com/in/mattwong-ca/"><img src="/images/LinkedIn.png" class="socialMediaIcons" /></a>
+        <a href="https://twitter.com/mattwong_ca"><img src="/images/Twitter.png" class="socialMediaIcons" /></a>
+        <a href="https://www.instagram.com/mattwong.ca/"><img src="/images/Instagram.png" class="socialMediaIcons" /></a>
+        <a href="https://www.f6s.com/mattwong.ca"><img src="/images/F6S.png" class="socialMediaIcons" /></a>
     </div>
 
     <!--Experience-->
@@ -70,8 +79,8 @@
                 <p class="fonts">Crypto Converter 💸</p>
             </div>
             <div>
-                <img src="/images/ByteCoinSS.png" width="242"
-                    height="451" class="image" style="width:100%">
+                <a href="https://github.com/MattWong-ca/ByteCoin"><img src="/images/ByteCoinSS.png" width="242"
+                    height="451" class="image" style="width:100%"></a>
             </div>
         </div>
 
@@ -80,8 +89,8 @@
                 <p class="fonts">Live Weather App 🌤️</p>
             </div>
             <div>
-                <img src="/images/ClimaSS.png" href="https://github.com/MattWong-ca/LiveWeatherApp" width="242" height="451"
-                    class="image" style="width:100%">
+                <a href="https://github.com/MattWong-ca/LiveWeatherApp"><img src="/images/ClimaSS.png" href="https://github.com/MattWong-ca/LiveWeatherApp" width="242" height="451"
+                    class="image" style="width:100%"></a>
             </div>
         </div>
 
@@ -90,7 +99,7 @@
                 <p class="fonts">Quizzler 📚</p>
             </div>
             <div>
-                <img src="/images/QuizzlerSS.png" href="https://github.com/MattWong-ca/MultipleChoiceQuiz" width="242" height="451" class="image" style="width:100%">
+                <a href="https://github.com/MattWong-ca/MultipleChoiceQuiz"><img src="/images/QuizzlerSS.png" href="https://github.com/MattWong-ca/MultipleChoiceQuiz" width="242" height="451" class="image" style="width:100%"></a>
             </div>
         </div>
 
@@ -109,27 +118,11 @@
     </br>
     -->
 
-    <!--Just For Fun-->
+    <!--Learnings-->
     <div class="wideDivContent">
-    <p class="headerFont">Just for Fun 😄</p>
-        
-        <!--Fun Facts-->
-        <p class="mediumFont""><u>Fun Fact:</u></p>
-        <p class="fonts">Click the button to get a random fact about me:</p>
-        <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
-        <div class="fonts" id="funFacts-container"></div>
-
-        <!--Server Date-->
-        <p class="mediumFont""><u>Today is...</u></p>
-        <p class="fonts">Click <a href="/date">here</a> or this button to see the server's current date:</p>
-        <button onclick="showServerTime();" class=" fonts">Today is...</button>
-        <div class="fonts" id="date-container"></div>
-        
-        <!--JSON--><!--client-side JavaScript and server-side Java-->
-        <p class="mediumFont""><u>JSON</u></p>
-        <p class="fonts">Click <a href="/JSONarray">here</a> to see JSON. Click the button to see the server-side JSON:</p>
-        <button class="fonts" onclick="fetchJSON();">JSON</button>
-        <div class="fonts" id="json-container"></div>
+        <p class="headerFont">Learnings 📖</p>
+        <p class="mediumFont">Check out what I've been up to:</p>
+        <p class="fonts">• <a href="learnings.html">Summer '22</a></p>
     </div>
     </br>
 

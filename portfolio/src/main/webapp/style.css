@@ -4,6 +4,13 @@
 }
 
 /*---DivContent---*/
+.landingPage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    text-align: center;
+    height: 100vh;
+}
 .centerDivContent {
     margin-left: auto;
     margin-right: auto;
@@ -32,6 +39,17 @@
     font-family: "Gill Sans";
     font-weight: 500;
     font-size: 30px;
+    padding-bottom: 0px;
+}
+.nameTitleFont {
+    font-family: "Gill Sans";
+    font-weight: 500;
+    font-size: 45px;
+    padding-top: 90px;
+}
+.typingTextFont {
+  text-align: center;
+  color: black;
 }
 
 /*---Images---*/
@@ -45,16 +63,16 @@
 .socialMediaIcons {
     width: 45px;
     height: 45px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 3px 0px 3px;
 }
 .experienceLogos {
     border-radius: 15%;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     margin-right: 20px;
 }
 
-/*--Button Containers--*/
+/*---Button Containers---*/
 #funFacts-container {
     display: inline-block;
 }
@@ -65,13 +83,13 @@
     display: inline-block;
 }
 
-/*--Text Beside Image (not currently in use)--*/
+/*---Text Beside Image (not currently in use)---*/
 .textBesideImage {
     display: inline-block;
     vertical-align: top;
 }
 
-/*--Project Section Cards--*/
+/*---Project Section Cards---*/
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
