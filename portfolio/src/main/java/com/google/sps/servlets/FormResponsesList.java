@@ -7,7 +7,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.sps.servlets.Message;
-
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,9 +35,7 @@ public class FormResponsesList extends HttpServlet {
             Message oneMessage = new Message(textValue);
             formResponses.add(oneMessage);
         }
-
         Gson gson = new Gson();
-
         response.setContentType("application/json;");
         response.getWriter().println(gson.toJson(formResponses));
     }

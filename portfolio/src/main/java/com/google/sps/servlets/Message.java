@@ -2,9 +2,9 @@ package com.google.sps.servlets;
 
 public final class Message {
 
-    private final String message;
+    private final String textValue;
 
-    public Message(String message) {
-        this.message = message;
+    public Message(String textValue) {
+        this.textValue = textValue;
     }
 }

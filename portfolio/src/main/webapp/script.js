@@ -44,12 +44,12 @@ async function fetchResponseList() {
 
     // Prints out entire ArrayList and its 1st message
     console.log(responsesList);
-    console.log(responsesList[0].message)
+    console.log(responsesList[0].textValue)
 
     // Sets text in formContainer to be entire ArrayList of messages
     const formContainer = document.getElementById('form-container');
     for (let i = 0; i < responsesList.length; i++) {
-        formContainer.innerText += responsesList[i].message + "💬";
+        formContainer.innerText += responsesList[i].textValue + "💬";
     }
 }
 
