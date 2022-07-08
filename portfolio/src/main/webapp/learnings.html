@@ -22,9 +22,18 @@
     </div>
 
     <div class="wideDivContent">
-        <!--Fun Facts-->
-        <p class="headerFont""><u>Fun Fact:</u></p>
-        <p class=" fonts">Click the button to get a random fact about me:</p>
+        <!--Client-side JS + Server-side Java-->
+        <p class="headerFont""><u>Client-side JS + Server-side Java</u></p>
+        <p class=" fonts">
+            A <u>client</u> is whatever I'm using to interact with the internet (eg.
+            web browsers, phone web browser). They run "locally", and anything
+            that happens "locally" means that it happens on my device (eg. laptop, 
+            phone). <u>Servers</u> serve content based on requests. It's the computer
+            my browser is talking to when browsers ask for specific URLs. <u>Servlets</u>
+            
+            
+            
+            Click the button to get a random fact about me:</p>
         <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
         <div class="fonts" id="funFacts-container"></div>
 
@@ -40,40 +49,6 @@
             JSON:</p>
         <button class="fonts" onclick="fetchJSON();">JSON</button>
         <div class="fonts" id="json-container"></div>
-
-        <!--Cloud Storage (Image Upload)-->
-        <p class="headerFont""><u>Image Upload with Cloud Storage</u></p>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <p class=" fonts">Type some text:</p>
-            <textarea class="fonts" name="message"></textarea>
-            <br />
-            <p class="fonts">Upload an image:</p>
-
-            <!-- Creates an input element that accepts files, 
-            allowing users to choose from their hard drive -->
-            <input class="fonts" type="file" name="image">
-            <br /><br />
-            <button class="fonts">Submit</button>
-        </form>
-
-    </div>
-    </br>
-
-    <div class="wideDivContent" onload="loadTasks()">
-    <h1>Todo List</h1>
-    <form method="POST" action="/new-task">
-        <input type="text" name="title" />
-        <br />
-        <button>Submit</button>
-    </form>
-    <hr />
-    <ul id="task-list"></ul>
-    </div>
-
-    <!-- Not used, will re-add when I have time -->
-    <p class="fonts">View <a href="tasks.html">Tasks</a>.</p>
-
-
 
     <div class="centerDivContent">
         <h1 class="headerFont">Return to homepage <a href="https://mwong-sps-summer22.appspot.com">here</a></h1>
