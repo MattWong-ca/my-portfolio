@@ -108,3 +108,44 @@ window.onload = function () {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid black}";
     document.body.appendChild(css);
 };
+
+
+// JS for creating/listing/deleting message elements in messages-list.html
+
+// Fetches tasks from the server and adds them to the DOM
+function loadMessages() {
+    fetch('/form-responses').then(response => response.json()).then((formResponses) => {
+        const taskListElement = document.getElementById('message-list');
+        formResponses.forEach((oneMessage) => {
+            taskListElement.appendChild(createTaskElement(oneMessage));
+        })
+    });
+}
+// Creates an element that represents a task, including its delete button
+function createTaskElement(oneMessage) {
+    const taskElement = document.createElement('li');
+    taskElement.className = 'message';
+
+    const titleElement = document.createElement('span');
+    titleElement.innerText = oneMessage.textValue;
+
+    const deleteButtonElement = document.createElement('button');
+    deleteButtonElement.innerText = 'Delete';
+    deleteButtonElement.className = 'fonts';
+    deleteButtonElement.addEventListener('click', () => {
+        deleteTask(oneMessage);
+
+        // Remove the task from the DOM.
+        taskElement.remove();
+    });
+
+    taskElement.appendChild(titleElement);
+    taskElement.appendChild(deleteButtonElement);
+    return taskElement;
+}
+// Tells the server to delete the task
+function deleteTask(oneMessage) {
+    const params = new URLSearchParams();
+    params.append('id', oneMessage.id);
+    fetch('/delete-response', { method: 'POST', body: params });
+}

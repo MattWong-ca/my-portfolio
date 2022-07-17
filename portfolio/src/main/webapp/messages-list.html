@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Matthew Wong - Leave a Message!</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body onload="loadMessages()">
+
+    <ul>
+        <li class="fonts"><a href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
+        <li class="fonts" style="float:right"><a class="active" href="learnings.html">Learnings</a></li>
+    </ul>
+    
+    <!--Form-->
+    <div class="centerDivContent">
+        <h1 class="headerFont">Leave a message!</h1>
+        <form action="/form-handler" method="POST">
+            <p class="fonts">Send me a message here:</p>
+            <textarea name="text-input" class="fonts" placeholder="Your message"></textarea>
+            <br />
+            <input name="title" type="submit" value="Send!" class="fonts" />
+        </form>
+    </div>
+
+    <hr/>
+
+    <ul class="fonts" id="message-list"></ul>
+    
+  </body>
+</html>

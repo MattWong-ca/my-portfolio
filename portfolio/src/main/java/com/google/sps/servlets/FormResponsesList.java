@@ -22,17 +22,18 @@ public class FormResponsesList extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message")
-                .build();
+        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message").setOrderBy(OrderBy.desc("timestamp")).build();
         QueryResults<Entity> results = datastore.run(query);
 
         List<Message> formResponses = new ArrayList<>();
         while (results.hasNext()) {
             Entity entity = results.next();
 
+            long id = entity.getKey().getId();
             String textValue = entity.getString("textValue");
+            long timestamp = entity.getLong("timestamp");
 
-            Message oneMessage = new Message(textValue);
+            Message oneMessage = new Message(id, textValue, timestamp);
             formResponses.add(oneMessage);
         }
         Gson gson = new Gson();

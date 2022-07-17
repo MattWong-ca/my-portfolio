@@ -10,6 +10,11 @@
 </head>
 
   <body>
+    <ul>
+        <li class="fonts"><a href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
+        <li class="fonts" style="float:right"><a class="active" href="learnings.html">Learnings</a></li>
+    </ul>
+    
     <!--Top Half of Site-->
     <div class="landingPage">
         <!--Introduction-->
@@ -116,22 +121,9 @@
         <p class="headerFont">Learnings 📖</p>
         <p class="mediumFont">Check out what I've been up to:</p>
         <p class="fonts">• <a href="learnings.html">Summer '22</a></p>
+        <p class="fonts">• <a href="messages-list.html">Cool contact form!</a></p>
     </div>
     </br>
-
-    <!--Form-->
-    <div class="centerDivContent">
-        <h1 class="headerFont">Contact me!</h1>
-        <form action="/form-handler" method="POST">
-            <p class="fonts">Send me a message here:</p>
-            <textarea name="text-input" class="fonts" placeholder="Your message"></textarea>
-            <br/>
-            <input type="submit" value="Send!" class="fonts" />
-        </form>
-    </div>
-
-    <button class="fonts" onclick="fetchResponseList();">Click here to see form responses</button>
-    <div class="fonts" id="form-container"></div>
 
   </body>
 </html>

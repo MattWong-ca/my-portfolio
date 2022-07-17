@@ -110,18 +110,42 @@
     border-radius: 10px 10px 0 0;
 }
 
+/*---Navbar---*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #FFFFFF;
+}
+.active {
+  background-color: white;
+}
 
-/* Not used, will add back in later */
+/*---Message List---*/
 #task-list {
   list-style-type: none;
 }
-.task {
+.message {
   border: thin solid black;
   display: flex;
   margin: 10px;
   padding: 10px;
   width: 300px;
 }
-.task span {
+.message span {
   flex-grow: 1;
 }
