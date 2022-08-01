@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet responsible for deleting tasks. */
+// Servlet responsible for deleting messages
 @WebServlet("/delete-response")
 public class DeleteResponseServlet extends HttpServlet {
   @Override
@@ -19,7 +19,7 @@ public class DeleteResponseServlet extends HttpServlet {
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
-    Key taskEntityKey = keyFactory.newKey(id);
-    datastore.delete(taskEntityKey);
+    Key messageEntityKey = keyFactory.newKey(id);
+    datastore.delete(messageEntityKey);
   }   
 }

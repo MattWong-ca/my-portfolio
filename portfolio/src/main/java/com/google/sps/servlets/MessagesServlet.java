@@ -1,24 +1,21 @@
 package com.google.sps.servlets;
 
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.FullEntity;
-import com.google.cloud.datastore.KeyFactory;
-
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.google.cloud.datastore.Query;
-import com.google.cloud.datastore.QueryResults;
-import com.google.cloud.datastore.StructuredQuery.OrderBy;
-import com.google.sps.servlets.Message;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
 
 @WebServlet("/messages")
 public class MessagesServlet extends HttpServlet {
@@ -36,11 +33,11 @@ public class MessagesServlet extends HttpServlet {
 
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
-        FullEntity taskEntity = Entity.newBuilder(keyFactory.newKey())
+        FullEntity messageEntity = Entity.newBuilder(keyFactory.newKey())
                 .set("textValue", textValue)
                 .set("timestamp", timestamp)
                 .build();
-        datastore.put(taskEntity);
+        datastore.put(messageEntity);
 
         // Write the value to the response so the user can see it
         response.setContentType("text/html;");
