@@ -58,8 +58,15 @@
 
         <!--JSON-->
         <p class="headerFont""><u>JSON</u></p>
-        <p class=" fonts">Click <a href="/JSONarray">here</a> to see JSON. Click the button to see the server-side
-            JSON:</p>
+        <p class=" fonts">
+            We usually want to return multiple values from a server, so formats like XML, 
+            key-value pairs, and JS Object Notation (JSON) are popular choices. JSON is useful
+            since JS can parse it without external libraries. Formatting JSON data can be 
+            tedious and error-prone - Gson is an open-source Java library that formats Java 
+            objects as JSON strings (need to add dependency to pom.xml to use Gson). Once JSON
+            is created in server, json() function can be used in JS to parse response into 
+            JSON objects. Click <a href="/JSONarray">here</a> to see an example of server JSON. 
+            Click the button to see the parsed server-side JSON:</p>
         <button class="fonts" onclick="fetchJSON();">JSON</button>
         <div class="fonts" id="json-container"></div>
 
