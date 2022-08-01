@@ -112,19 +112,19 @@ window.onload = function () {
 
 // JS for creating/listing/deleting message elements in messages-list.html
 
-// Fetches tasks from the server and adds them to the DOM
+// Fetches messages from the server and adds them to the DOM
 function loadMessages() {
     fetch('/messages').then(response => response.json()).then((formResponses) => {
-        const taskListElement = document.getElementById('message-list');
+        const messageListElement = document.getElementById('message-list');
         formResponses.forEach((oneMessage) => {
-            taskListElement.appendChild(createTaskElement(oneMessage));
+            messageListElement.appendChild(createMessageElement(oneMessage));
         })
     });
 }
-// Creates an element that represents a task, including its delete button
-function createTaskElement(oneMessage) {
-    const taskElement = document.createElement('li');
-    taskElement.className = 'message';
+// Creates an element that represents a message, including its delete button
+function createMessageElement(oneMessage) {
+    const messageElement = document.createElement('li');
+    messageElement.className = 'message';
 
     const titleElement = document.createElement('span');
     titleElement.innerText = oneMessage.textValue;
@@ -136,12 +136,12 @@ function createTaskElement(oneMessage) {
         deleteMessage(oneMessage);
 
         // Remove the task from the DOM.
-        taskElement.remove();
+        messageElement.remove();
     });
 
-    taskElement.appendChild(titleElement);
-    taskElement.appendChild(deleteButtonElement);
-    return taskElement;
+    messageElement.appendChild(titleElement);
+    messageElement.appendChild(deleteButtonElement);
+    return messageElement;
 }
 // Tells the server to delete the task
 function deleteMessage(oneMessage) {
