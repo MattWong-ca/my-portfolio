@@ -1,9 +1,158 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
 }
 
-#greeting-container {
-  margin-top: 20px;
+/*---DivContent---*/
+.landingPage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    text-align: center;
+    height: 100vh;
+}
+.centerDivContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    text-align: center;
+}
+.wideDivContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+/*---Fonts---*/
+.fonts {
+    font-family: "Gill Sans";
+    font-weight: 150;
+    font-size: 20px;
+}
+.mediumFont {
+    font-family: "Gill Sans";
+    font-weight: 150;
+    font-size: 25px;
+    padding-bottom: 0px;
+}
+.headerFont {
+    font-family: "Gill Sans";
+    font-weight: 500;
+    font-size: 30px;
+    padding-bottom: 0px;
+}
+.nameTitleFont {
+    font-family: "Gill Sans";
+    font-weight: 500;
+    font-size: 45px;
+    padding-top: 90px;
+}
+.typingTextFont {
+  text-align: center;
+  color: black;
+}
+
+/*---Images---*/
+.profilePic {
+    border-radius: 50%;
+    border: 8px solid #28ACEA;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.socialMediaIcons {
+    width: 45px;
+    height: 45px;
+    margin: 0px 3px 0px 3px;
+}
+.experienceLogos {
+    border-radius: 15%;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+/*---Button Containers---*/
+#funFacts-container {
+    display: inline-block;
+}
+#date-container {
+    display: inline-block;
+}
+#json-container {
+    display: inline-block;
+}
+
+/*---Text Beside Image (not currently in use)---*/
+.textBesideImage {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*---Project Section Cards---*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 242px;
+    border-radius: 10px;
+    display: inline-block; 
+    margin-right: 20px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.cardTitle {
+    padding: 2px;
+    text-align: center;
+}
+.cardImage {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+/*---Navbar---*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #FFFFFF;
+}
+.active {
+  background-color: white;
+}
+
+/*---Message List---*/
+#task-list {
+  list-style-type: none;
+}
+.message {
+  border: thin solid black;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+.message span {
+  flex-grow: 1;
+}
+
+
+
+
+.hover:hover {
+    color: #28ACEA;
 }

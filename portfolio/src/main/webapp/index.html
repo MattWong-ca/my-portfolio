@@ -1,19 +1,129 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Wong 🎯</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png" />
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-  </head>
+</head>
+
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <ul>
+        <li class="fonts"><a class="hover" href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="learnings.html">Learnings</a></li>
+    </ul>
+    
+    <!--Top Half of Site-->
+    <div class="landingPage">
+        <!--Introduction-->
+        <h1 class="nameTitleFont">Matthew Wong</h1>
+        <img src="/images/ProfilePic.png" width="230" height="230" class="profilePic" />
+        </br>
+
+        <!-- Typing effect -->
+        <a class="typewrite hi mediumFont" data-period="2000"
+            data-type='["Swift iOS Developer", "Java Android Developer", "Aspiring Founder"]'>
+            <span class="wrap">|</span>
+        </a>
+
+        <p class="fonts">
+            Hello, nice to meet you! I'm a mobile developer from Toronto, Canada. I'm currently working @ 
+            <a href="https://www.thescore.com/">theScore</a>
+            as an iOS Developer, and previously worked @ 
+            <a href="https://www.shopify.ca/">Shopify</a>
+            in a technical support/ecommerce consulting role!
+        </p>
+        
+        <!--Social Media Icons-->
+        <a href="https://github.com/MattWong-ca"><img src="/images/GitHub.png" class="socialMediaIcons" /></a>
+        <a href="https://www.linkedin.com/in/mattwong-ca/"><img src="/images/LinkedIn.png" class="socialMediaIcons" /></a>
+        <a href="https://twitter.com/mattwong_ca"><img src="/images/Twitter.png" class="socialMediaIcons" /></a>
+        <a href="https://www.instagram.com/mattwong.ca/"><img src="/images/Instagram.png" class="socialMediaIcons" /></a>
+        <a href="https://www.f6s.com/mattwong.ca"><img src="/images/F6S.png" class="socialMediaIcons" /></a>
     </div>
+
+    <!--Experience-->
+    <div class="wideDivContent">
+        <p class="headerFont"><a style="text-decoration:none;">Experience 💼</a></p>
+        <a href="https://www.thescore.com/"><img src="/images/theScore.png" class="experienceLogos"/></a>
+        <a href="https://www.shopify.com/"><img src="/images/Shopify.jpeg" class="experienceLogos"/></a>
+        <a href="https://www.foundersboost.com/"><img src="/images/FoundersBoost.jpeg" class="experienceLogos"/></a>
+    </div>
+    </br>
+
+    <!--Skills-->
+    <div class="wideDivContent">
+        <p class="headerFont">Skills 🛠</p>
+        <p class="mediumFont"><u>Languages/Frameworks:</u></p>
+        <p class="fonts">Swift • UIKit • SwiftUI • Java • C# • GraphQL • C++ • JavaScript • HTML • CSS • MATLAB • React Native</p>
+
+        <p class="mediumFont"><u>Tools/Technologies:</u></p>
+        <p class="fonts">Git/GitHub/GitLab • Xcode • CocoaPods • Firebase • JSON • Google Cloud (Datastore) • VS Code • Geany • .NET • CLion • Android Studio</p>
+        
+        <p class="mediumFont"><u>General:</u></p>
+        <p class="fonts">Object-oriented Programming • MVC • MVVM • Version Control • Data Structures + Algorithms • Debugging • API calls</p>
+    </div>
+    </br>
+
+    <!--Projects-->
+    <div class="wideDivContent">
+        <p class="headerFont">Projects 💡</p>
+
+        <div>
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">BMI Calculator 🏋️</p>
+            </div>
+            <div>
+                <a href="https://github.com/MattWong-ca/BodyMassIndexCalculator"><img src="/images/BMICalcSS.png" width="242" 
+                    height="451" class="cardImage"></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">Crypto Converter 💸</p>
+            </div>
+            <div>
+                <a href="https://github.com/MattWong-ca/ByteCoin"><img src="/images/ByteCoinSS.png" width="242"
+                    height="451" class="image" style="width:100%"></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">Live Weather App 🌤️</p>
+            </div>
+            <div>
+                <a href="https://github.com/MattWong-ca/LiveWeatherApp"><img src="/images/ClimaSS.png" href="https://github.com/MattWong-ca/LiveWeatherApp" width="242" height="451"
+                    class="image" style="width:100%"></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <p class="fonts">Quizzler 📚</p>
+            </div>
+            <div>
+                <a href="https://github.com/MattWong-ca/MultipleChoiceQuiz"><img src="/images/QuizzlerSS.png" href="https://github.com/MattWong-ca/MultipleChoiceQuiz" width="242" height="451" class="image" style="width:100%"></a>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </br>
+
+    <!--Learnings-->
+    <div class="wideDivContent">
+        <p class="headerFont">Learnings 📖</p>
+        <p class="mediumFont">Check out what I've been up to:</p>
+        <p class="fonts">• <a href="learnings.html">Summer '22</a></p>
+        <p class="fonts">• <a href="messages-list.html">Cool contact form!</a></p>
+    </div>
+    </br>
+
   </body>
 </html>
