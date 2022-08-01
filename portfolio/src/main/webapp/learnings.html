@@ -31,14 +31,13 @@
         <p class="headerFont""><u>Client-side JS + Server-side Java</u></p>
         <p class=" fonts">
             A <u>client</u> is whatever I'm using to interact with the internet (eg.
-            web browsers, phone web browser). They run "locally", and anything
-            that happens "locally" means that it happens on my device (eg. laptop, 
-            phone). <u>Servers</u> serve content based on requests. It's the computer
-            my browser is talking to when browsers ask for specific URLs. <u>Servlets</u>
-            
-            
-            
-            Click the button to get a random fact about me:</p>
+            web browsers, phone web browser). They run "locally", meaning that it happens 
+            on my device (eg. laptop, phone). <u>Servers</u> serve content based on requests 
+            - it's the computer my browser is talking to when browsers ask for specific URLs. 
+            <u>Servlets</u> are a Java class that run when a client requests a URL.
+            @WebServlet("/URL") tells the server which URL the servlet maps to. doGet() runs
+            every time a client sends a GET request. Not a servlet, but click the button 
+            to get a random fact about me:</p>
         <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
         <div class="fonts" id="funFacts-container"></div>
 
