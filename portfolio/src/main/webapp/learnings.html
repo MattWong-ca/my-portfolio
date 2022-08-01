@@ -13,13 +13,14 @@
 <body>
     <ul>
         <li class="fonts"><a class="hover" href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
-        <li class="fonts" style="float:right"><a class="active hover" href="learnings.html">Learnings</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="learnings.html">Web Dev</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="https://github.com/MattWong-ca/SwiftNotes">iOS Dev</a></li>
     </ul>
     
     <!--Top Half of Site-->
     <div class="centerDivContent">
         <!--Introduction-->
-        <h1 class="headerFont">📖 Learnings - Summer '22 📖</h1>
+        <h1 class="headerFont">💻 Summer '22 - Web Dev 💻</h1>
         <p class="fonts">
             Web Dev in HTML/CSS/JS • Client-side JS • Server-side Java • JSON fetching with Gson • 
             Google Cloud APIs (Datastore/Cloud Storage/Cloud Vision)
@@ -57,7 +58,7 @@
         <div class="fonts" id="date-container"></div>
 
         <!--JSON-->
-        <p class="headerFont""><u>JSON</u></p>
+        <p class="headerFont""><u>JSON Servlet</u></p>
         <p class=" fonts">
             We usually want to return multiple values from a server, so formats like XML, 
             key-value pairs, and JS Object Notation (JSON) are popular choices. JSON is useful
@@ -70,6 +71,40 @@
         <button class="fonts" onclick="fetchJSON();">JSON</button>
         <div class="fonts" id="json-container"></div>
 
+        <!--Contact Form-->
+        <p class="headerFont""><u>Contact Form</u></p>
+        <p class=" fonts">
+            The contact form below demonstrates client to server communication. GET requests get 
+            data from the server, while POST requests let you send data to the server. A common 
+            way to send POST requests is by HTML &lt;form&gt; tags. Adding action="/URL" to the 
+            form tag connects the form to the servlet. When the form is submitted, it sends a POST 
+            request to the URL in the action attribute. The server looks for a servlet that maps 
+            to the URL, and then runs its doPost() function. The System.out.println() JS function 
+            prints the user's input in server logs (in <a href="https://console.cloud.google.com/logs/query">
+            Google Cloud's Logs Explorer</a>, type `std out` in search bar). The Logs Explorer 
+            shows information about each request sent to the server, including any logs printed. 
+            Lastly, the user is redirected to another URL through response.sendRedirect("/messages-list.html");.</p>
+        <button class="fonts" onclick="location.href = 'https://mwong-sps-summer22.appspot.com/messages-list.html';">Go to Contact Form!</button>
+
+        <!--Datastore-->
+        <p class="headerFont""><u>Datastore</u></p>
+        <p class=" fonts">
+            The form above uses a NoSQL database called <a href="https://googleapis.dev/java/google-cloud-datastore/1.105.3/com/google/cloud/datastore/Datastore.html">Datastore</a> 
+            to store messages permanently (need to add dependency to pom.xml). Persistent storage stores data 
+            safely and prevents the chance of erased data (eg. when you have more data than fits 
+            memory, when server restarts, or when App Engine automatically scales server up/down). 
+            To get an instance of the Datastore class, the DatastoreOptions.getDefaultInstance().getService() 
+            function is ran. Data in Datastore is represented by entities - similar to an instance of a 
+            class in Java. Each entitity has an associated key, and a key has a kind (like a class name). 
+            Entities also have properties, with each having a key and value (.set() function is 
+            called to set properties). The entity is then stored by passing it in the datastore.put() 
+            function. To load entities from Datastore, a Query instance is first created. This 
+            Query is passed into the datastore.run() function, which gives a QueryResults instance 
+            that contains all the entities in Datastore with that kind. The hasNext() and next() 
+            functions are used to iterate thorugh the entities. Lastly, entity.getTYPE() is ran 
+            to get the properties from Datastore.</p>
+        <button class="fonts" onclick="location.href = 'https://console.cloud.google.com/datastore/entities/query/kind';">Datastore</button>
+        
 </body>
 
 </html>
