@@ -39,7 +39,7 @@ async function fetchJSON() {
 //Lists out form responses by iterating through ArrayList
 async function fetchResponseList() {
     // Fetches JSON from server and turns it into JSON
-    const responseFromServer = await fetch('/form-responses');
+    const responseFromServer = await fetch('/messages');
     const responsesList = await responseFromServer.json();
 
     // Prints out entire ArrayList and its 1st message
@@ -114,7 +114,7 @@ window.onload = function () {
 
 // Fetches tasks from the server and adds them to the DOM
 function loadMessages() {
-    fetch('/form-responses').then(response => response.json()).then((formResponses) => {
+    fetch('/messages').then(response => response.json()).then((formResponses) => {
         const taskListElement = document.getElementById('message-list');
         formResponses.forEach((oneMessage) => {
             taskListElement.appendChild(createTaskElement(oneMessage));
@@ -133,7 +133,7 @@ function createTaskElement(oneMessage) {
     deleteButtonElement.innerText = 'Delete';
     deleteButtonElement.className = 'fonts';
     deleteButtonElement.addEventListener('click', () => {
-        deleteTask(oneMessage);
+        deleteMessage(oneMessage);
 
         // Remove the task from the DOM.
         taskElement.remove();
@@ -144,7 +144,7 @@ function createTaskElement(oneMessage) {
     return taskElement;
 }
 // Tells the server to delete the task
-function deleteTask(oneMessage) {
+function deleteMessage(oneMessage) {
     const params = new URLSearchParams();
     params.append('id', oneMessage.id);
     fetch('/delete-response', { method: 'POST', body: params });

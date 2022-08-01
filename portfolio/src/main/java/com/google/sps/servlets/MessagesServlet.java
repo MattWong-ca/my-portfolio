@@ -11,10 +11,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-// Do later: import jSoup to sanitize user input
 
-@WebServlet("/form-handler")
-public class FormHandlerServlet extends HttpServlet {
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
+import com.google.sps.servlets.Message;
+import com.google.gson.Gson;
+import java.util.ArrayList;
+import java.util.List;
+
+@WebServlet("/messages")
+public class MessagesServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -41,5 +48,28 @@ public class FormHandlerServlet extends HttpServlet {
         response.getWriter().println(timestamp);
 
         response.sendRedirect("/messages-list.html");
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        Query<Entity> query = Query.newEntityQueryBuilder().setKind("Message").setOrderBy(OrderBy.desc("timestamp"))
+                .build();
+        QueryResults<Entity> results = datastore.run(query);
+
+        List<Message> formResponses = new ArrayList<>();
+        while (results.hasNext()) {
+            Entity entity = results.next();
+
+            long id = entity.getKey().getId();
+            String textValue = entity.getString("textValue");
+            long timestamp = entity.getLong("timestamp");
+
+            Message oneMessage = new Message(id, textValue, timestamp);
+            formResponses.add(oneMessage);
+        }
+        Gson gson = new Gson();
+        response.setContentType("application/json;");
+        response.getWriter().println(gson.toJson(formResponses));
     }
 }

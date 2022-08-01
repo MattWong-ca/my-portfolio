@@ -10,14 +10,14 @@
   <body onload="loadMessages()">
 
     <ul>
-        <li class="fonts"><a href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
-        <li class="fonts" style="float:right"><a class="active" href="learnings.html">Learnings</a></li>
+        <li class="fonts"><a class="hover" href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="learnings.html">Learnings</a></li>
     </ul>
     
     <!--Form-->
     <div class="centerDivContent">
         <h1 class="headerFont">Leave a message!</h1>
-        <form action="/form-handler" method="POST">
+        <form action="/messages" method="POST">
             <p class="fonts">Send me a message here:</p>
             <textarea name="text-input" class="fonts" placeholder="Your message"></textarea>
             <br />

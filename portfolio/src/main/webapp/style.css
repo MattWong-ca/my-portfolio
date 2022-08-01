@@ -149,3 +149,10 @@ li a:hover:not(.active) {
 .message span {
   flex-grow: 1;
 }
+
+
+
+
+.hover:hover {
+    color: #28ACEA;
+}
