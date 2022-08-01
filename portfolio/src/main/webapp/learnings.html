@@ -42,8 +42,17 @@
         <div class="fonts" id="funFacts-container"></div>
 
         <!--Server Date-->
-        <p class="headerFont""><u>Today is...</u></p>
-        <p class=" fonts">Click <a href="/date">here</a> or this button to see the server's current date:</p>
+        <p class="headerFont""><u>Date Servlet</u></p>
+        <p class=" fonts">
+            This date servlet uses the JS fetch() function to request content from servers. 
+            fetch() is useful for requesting dynamic content. When I navigate to /date, 
+            my browser sends a request for the URL, and the server routes the request to 
+            DateServlet.java. The doGet() function writes the current date to the response, 
+            and my browser renders that response. In script.js, fetch() runs asynchronously, 
+            sending the request in the background while the rest of the code keeps running. 
+            That's why async (function will call async function) and await (tells JS to wait
+            for response rather than sending request in background) are used. Click <a href="/date">here</a> 
+            or this button to see the server's current date:</p>
         <button onclick="showServerTime();" class=" fonts">Today is...</button>
         <div class="fonts" id="date-container"></div>
 
