@@ -147,5 +147,5 @@ function createMessageElement(oneMessage) {
 function deleteMessage(oneMessage) {
     const params = new URLSearchParams();
     params.append('id', oneMessage.id);
-    fetch('/delete-response', { method: 'POST', body: params });
+    fetch('/messages', { method: 'PUT', body: params });
 }

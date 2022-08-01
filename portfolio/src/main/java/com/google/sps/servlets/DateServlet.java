@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that responds with the current date. */
+// Servlet that responds with the current date
 @WebServlet("/date")
 public class DateServlet extends HttpServlet {
 

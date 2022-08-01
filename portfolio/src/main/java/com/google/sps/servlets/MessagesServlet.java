@@ -12,6 +12,7 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
@@ -20,17 +21,18 @@ import com.google.cloud.datastore.StructuredQuery.OrderBy;
 @WebServlet("/messages")
 public class MessagesServlet extends HttpServlet {
 
+    // doPost - requests values sent from user, prints them in server logs, and stores them in datastore
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Get the value entered in the form.
-
         String textValue = request.getParameter("text-input");
         long timestamp = System.currentTimeMillis();
 
-        // Print the value so you can see it in the server logs.
-        System.out.println("You submitted: " + textValue);
+        // Print user values in server logs
+        System.out.println("User submitted: " + textValue);
         System.out.println(timestamp);
 
+        // Store values in datastore
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
         KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
         FullEntity messageEntity = Entity.newBuilder(keyFactory.newKey())
@@ -39,14 +41,10 @@ public class MessagesServlet extends HttpServlet {
                 .build();
         datastore.put(messageEntity);
 
-        // Write the value to the response so the user can see it
-        response.setContentType("text/html;");
-        response.getWriter().println("You submitted: " + textValue);
-        response.getWriter().println(timestamp);
-
         response.sendRedirect("/messages-list.html");
     }
 
+    // doGet - gets user values stored in datastore to create array of Message objects, sends it back to client-side
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -54,7 +52,7 @@ public class MessagesServlet extends HttpServlet {
                 .build();
         QueryResults<Entity> results = datastore.run(query);
 
-        List<Message> formResponses = new ArrayList<>();
+        List<Message> messagesArray = new ArrayList<>();
         while (results.hasNext()) {
             Entity entity = results.next();
 
@@ -63,10 +61,21 @@ public class MessagesServlet extends HttpServlet {
             long timestamp = entity.getLong("timestamp");
 
             Message oneMessage = new Message(id, textValue, timestamp);
-            formResponses.add(oneMessage);
+            messagesArray.add(oneMessage);
         }
         Gson gson = new Gson();
         response.setContentType("application/json;");
-        response.getWriter().println(gson.toJson(formResponses));
+        response.getWriter().println(gson.toJson(messagesArray));
+    }
+
+    // doPut - deletes the user's message
+    @Override
+    public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        long id = Long.parseLong(request.getParameter("id"));
+
+        Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+        KeyFactory keyFactory = datastore.newKeyFactory().setKind("Message");
+        Key messageEntityKey = keyFactory.newKey(id);
+        datastore.delete(messageEntityKey);
     }
 }
