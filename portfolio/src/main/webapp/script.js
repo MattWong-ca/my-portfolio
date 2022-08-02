@@ -1,4 +1,4 @@
-//Adds random fun fact about me to the page inside funFactContainer
+// Adds random fun fact about me to the page inside funFactContainer
 function funFactsAboutMe() {
   const funFacts =
       [' huge Toronto Raptors and Blue Jays fan! 🏀 ⚾',
@@ -12,11 +12,14 @@ function funFactsAboutMe() {
     funFactContainer.innerText = funFact;
 }
 
-//Adds current server time to the page inside dateContainer
+// Adds current server time to the page inside dateContainer
 async function showServerTime() {
+    // await tells JS to wait for value returned from fetch()
     const responseFromServer = await fetch('/date');
+    // await tells JS to wait for text content that's included in response
     const textFromResponse = await responseFromServer.text();
 
+    // Document Object Model (DOM) Manipulation
     const dateContainer = document.getElementById('date-container');
     dateContainer.innerText = textFromResponse;
 }
@@ -36,7 +39,7 @@ async function fetchJSON() {
     jsonContainer.innerText = jsonArray;
 }
 
-//Lists out form responses by iterating through ArrayList
+// Lists out form responses by iterating through ArrayList
 async function fetchResponseList() {
     // Fetches JSON from server and turns it into JSON
     const responseFromServer = await fetch('/messages');
@@ -53,7 +56,7 @@ async function fetchResponseList() {
     }
 }
 
-//JS for typing effect (source: https://css-tricks.com/snippets/css/typewriter-effect/)
+// JS for typing effect (source: https://css-tricks.com/snippets/css/typewriter-effect/)
 var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
