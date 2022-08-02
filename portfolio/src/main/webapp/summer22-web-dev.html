@@ -107,14 +107,20 @@
 
         <!--Image Uploader-->
         <p class="headerFont""><u>Image Uploader</u></p>
-        <p class=" fonts">
-            This image uploader uses Google Cloud Storage. Click
-            <a href="/upload">here</a> to see all of the uploaded images, or try uploading a file below.</p>
-        
+        <p class="fonts">
+            This image uploader uses <a href="https://console.cloud.google.com/storage/browser">Google Cloud Storage</a>. POST requests will work for data like strings/numbers, 
+            but to store binary data like files, Cloud Storage can be used. In the HTML &lt;form&gt; tag, the 
+            enctype="multipart/form-data" attribute is required for file uploads and the &lt;input&gt; tag includes 
+            name="image" to accept files (lets users choose file from hard drive). ImageServlet.java's doPost() 
+            function gets the inputted image and uploads it to Cloud Storage, which then returns the image's URL as 
+            a string. The doGet() function gets the URL of every image uploaded and uses them to build a HTML page 
+            (can also return URLs as JSON and build HTML using JS). Issues can happen where the uploaded files have 
+            the same name; to fix this, the current time can be added to the name or the UUID class can be used to 
+            generate a unique ID. Click <a href="/upload">here</a> to see all of the uploaded images, or try uploading 
+            a file below.</p>
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <!-- Creates an input element that accepts files, allowing users to choose from their hard drive -->
             <input class="fonts" type="file" name="image">
-            
             <br /><br />
             <button class="fonts">Submit</button>
         </form>

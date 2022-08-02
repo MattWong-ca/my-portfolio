@@ -35,14 +35,6 @@ public class ImagesServlet extends HttpServlet {
         String uploadedFileUrl = uploadToCloudStorage(fileName, fileInputStream);
 
         response.sendRedirect("/upload");
-        // Output some HTML that shows the data the user entered.
-        // You could also store the uploadedFileUrl in Datastore instead.
-        // PrintWriter out = response.getWriter();
-        // out.println("<p>Here's the image you uploaded:</p>");
-        // out.println("<a href=\"" + uploadedFileUrl + "\">");
-        // out.println("<img src=\"" + uploadedFileUrl + "\" />");
-        // out.println("</a>");
-        // out.println("<p>Here's the text you entered:</p>");
     }
 
     // Uploads a file to Cloud Storage and returns the uploaded file's URL
