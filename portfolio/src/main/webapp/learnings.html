@@ -23,7 +23,7 @@
         <h1 class="headerFont">💻 Summer '22 - Web Dev 💻</h1>
         <p class="fonts">
             Web Dev in HTML/CSS/JS • Client-side JS • Server-side Java • JSON fetching with Gson • 
-            Google Cloud APIs (Datastore/Cloud Storage/Cloud Vision)
+            Google Cloud APIs
         </p>
     </div>
 
@@ -104,6 +104,20 @@
             functions are used to iterate thorugh the entities. Lastly, entity.getTYPE() is ran 
             to get the properties from Datastore.</p>
         <button class="fonts" onclick="location.href = 'https://console.cloud.google.com/datastore/entities/query/kind';">Datastore</button>
+
+        <!--Image Uploader-->
+        <p class="headerFont""><u>Image Uploader</u></p>
+        <p class=" fonts">
+            This image uploader uses Google Cloud Storage. Click
+            <a href="/upload">here</a> to see all of the uploaded images, or try uploading a file below.</p>
+        
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- Creates an input element that accepts files, allowing users to choose from their hard drive -->
+            <input class="fonts" type="file" name="image">
+            
+            <br /><br />
+            <button class="fonts">Submit</button>
+        </form>
         
 </body>
 
