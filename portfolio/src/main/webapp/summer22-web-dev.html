@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Wong 🎯</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/Raptors.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li class="fonts"><a class="hover" href="https://mwong-sps-summer22.appspot.com/">Matthew Wong</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="summer22-web-dev.html">Web Dev</a></li>
+        <li class="fonts" style="float:right"><a class="active hover" href="https://github.com/MattWong-ca/SwiftNotes">iOS Dev</a></li>
+    </ul>
+    
+    <!--Top Half of Site-->
+    <div class="centerDivContent">
+        <!--Introduction-->
+        <h1 class="headerFont">💻 Summer '22 - Web Dev 💻</h1>
+        <p class="fonts">
+            Web Dev in HTML/CSS/JS • Client-side JS • Server-side Java • JSON fetching with Gson • 
+            Google Cloud APIs
+        </p>
+    </div>
+
+    <div class="wideDivContent">
+        <!--Client-side JS + Server-side Java-->
+        <p class="headerFont""><u>Client-side JS + Server-side Java</u></p>
+        <p class=" fonts">
+            A <u>client</u> is whatever I'm using to interact with the internet (eg.
+            web browsers, phone web browser). They run "locally", meaning that it happens 
+            on my device (eg. laptop, phone). <u>Servers</u> serve content based on requests 
+            - it's the computer my browser is talking to when browsers ask for specific URLs. 
+            <u>Servlets</u> are a Java class that run when a client requests a URL.
+            @WebServlet("/URL") tells the server which URL the servlet maps to. doGet() runs
+            every time a client sends a GET request. Not a servlet, but click the button 
+            to get a random fact about me:</p>
+        <button class="fonts" onclick="funFactsAboutMe()">I am a...</button>
+        <div class="fonts" id="funFacts-container"></div>
+
+        <!--Server Date-->
+        <p class="headerFont""><u>Date Servlet</u></p>
+        <p class=" fonts">
+            This date servlet uses the JS fetch() function to request content from servers. 
+            fetch() is useful for requesting dynamic content. When I navigate to /date, 
+            my browser sends a request for the URL, and the server routes the request to 
+            DateServlet.java. The doGet() function writes the current date to the response, 
+            and my browser renders that response. In script.js, fetch() runs asynchronously, 
+            sending the request in the background while the rest of the code keeps running. 
+            That's why async (function will call async function) and await (tells JS to wait
+            for response rather than sending request in background) are used. Click <a href="/date">here</a> 
+            or this button to see the server's current date:</p>
+        <button onclick="showServerTime();" class=" fonts">Today is...</button>
+        <div class="fonts" id="date-container"></div>
+
+        <!--JSON-->
+        <p class="headerFont""><u>JSON Servlet</u></p>
+        <p class=" fonts">
+            We usually want to return multiple values from a server, so formats like XML, 
+            key-value pairs, and JS Object Notation (JSON) are popular choices. JSON is useful
+            since JS can parse it without external libraries. Formatting JSON data can be 
+            tedious and error-prone - Gson is an open-source Java library that formats Java 
+            objects as JSON strings (need to add dependency to pom.xml to use Gson). Once JSON
+            is created in server, json() function can be used in JS to parse response into 
+            JSON objects. Click <a href="/JSONarray">here</a> to see an example of server JSON. 
+            Click the button to see the parsed server-side JSON:</p>
+        <button class="fonts" onclick="fetchJSON();">JSON</button>
+        <div class="fonts" id="json-container"></div>
+
+        <!--Contact Form-->
+        <p class="headerFont""><u>Contact Form</u></p>
+        <p class=" fonts">
+            The contact form below demonstrates client to server communication. GET requests get 
+            data from the server, while POST requests let you send data to the server. A common 
+            way to send POST requests is by HTML &lt;form&gt; tags. Adding action="/URL" to the 
+            form tag connects the form to the servlet. When the form is submitted, it sends a POST 
+            request to the URL in the action attribute. The server looks for a servlet that maps 
+            to the URL, and then runs its doPost() function. The System.out.println() JS function 
+            prints the user's input in server logs (in <a href="https://console.cloud.google.com/logs/query">
+            Google Cloud's Logs Explorer</a>, type `std out` in search bar). The Logs Explorer 
+            shows information about each request sent to the server, including any logs printed. 
+            Lastly, the user is redirected to another URL through response.sendRedirect("/messages-list.html");.</p>
+        <button class="fonts" onclick="location.href = 'https://mwong-sps-summer22.appspot.com/messages-list.html';">Go to Contact Form!</button>
+
+        <!--Datastore-->
+        <p class="headerFont""><u>Datastore</u></p>
+        <p class=" fonts">
+            The form above uses a NoSQL database called <a href="https://googleapis.dev/java/google-cloud-datastore/1.105.3/com/google/cloud/datastore/Datastore.html">Datastore</a> 
+            to store messages permanently (need to add dependency to pom.xml). Persistent storage stores data 
+            safely and prevents the chance of erased data (eg. when you have more data than fits 
+            memory, when server restarts, or when App Engine automatically scales server up/down). 
+            To get an instance of the Datastore class, the DatastoreOptions.getDefaultInstance().getService() 
+            function is ran. Data in Datastore is represented by entities - similar to an instance of a 
+            class in Java. Each entitity has an associated key, and a key has a kind (like a class name). 
+            Entities also have properties, with each having a key and value (.set() function is 
+            called to set properties). The entity is then stored by passing it in the datastore.put() 
+            function. To load entities from Datastore, a Query instance is first created. This 
+            Query is passed into the datastore.run() function, which gives a QueryResults instance 
+            that contains all the entities in Datastore with that kind. The hasNext() and next() 
+            functions are used to iterate thorugh the entities. Lastly, entity.getTYPE() is ran 
+            to get the properties from Datastore.</p>
+        <button class="fonts" onclick="location.href = 'https://console.cloud.google.com/datastore/entities/query/kind';">Datastore</button>
+
+        <!--Image Uploader-->
+        <p class="headerFont""><u>Image Uploader</u></p>
+        <p class="fonts">
+            This image uploader uses <a href="https://console.cloud.google.com/storage/browser">Google Cloud Storage</a>. POST requests will work for data like strings/numbers, 
+            but to store binary data like files, Cloud Storage can be used. In the HTML &lt;form&gt; tag, the 
+            enctype="multipart/form-data" attribute is required for file uploads and the &lt;input&gt; tag includes 
+            name="image" to accept files (lets users choose file from hard drive). ImageServlet.java's doPost() 
+            function gets the inputted image and uploads it to Cloud Storage, which then returns the image's URL as 
+            a string. The doGet() function gets the URL of every image uploaded and uses them to build a HTML page 
+            (can also return URLs as JSON and build HTML using JS). Issues can happen where the uploaded files have 
+            the same name; to fix this, the current time can be added to the name or the UUID class can be used to 
+            generate a unique ID. Click <a href="/upload">here</a> to see all of the uploaded images, or try uploading 
+            a file below.</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <!-- Creates an input element that accepts files, allowing users to choose from their hard drive -->
+            <input class="fonts" type="file" name="image">
+            <br /><br />
+            <button class="fonts">Submit</button>
+        </form>
+        
+</body>
+
+</html>
